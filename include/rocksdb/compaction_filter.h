@@ -332,6 +332,7 @@ class CompactionFilter : public Customizable {
   // and kRemoveAndSkipUntil respectively, and have the same semantics as
   // the corresponding parameters of FilterV2/V3.
   virtual Decision FilterBlobByKey(int /*level*/, const Slice& /*key*/,
+                                   uint64_t /*expire_time*/,
                                    std::string* /*new_value*/,
                                    std::string* /*skip_until*/) const {
     return Decision::kUndetermined;
